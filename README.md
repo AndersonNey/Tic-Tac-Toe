@@ -1,0 +1,7 @@
+# Have fun playing TIC TAC Toe
+
+Below the board contains the numbers corresponding to each address that is possible to play on the board above.
+
+![image1](image1.png "")
+
+![image1](image2.png "")
