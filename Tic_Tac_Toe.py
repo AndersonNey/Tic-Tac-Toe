@@ -41,8 +41,8 @@ class Move:
 
     def move(self,player_of_the_time,opposing_player):
         # SHOWING GAME BOARD
-        def tela():
-            system('clear')
+        def display():
+            system('clear')   # For windows: system('cls')
             print('====== Tic Tac Toe ======        Player of the time {0}  ---> {1}'.format(self.players[player_of_the_time]['name'],self.players[player_of_the_time]['option']))       
             print('     {0}  |   {1}  |   {2}'.format(self.places_played['7'],self.places_played['8'],self.places_played['9']))
             print('   ---- + ---- + ----              Current Score: {0} victories for  -> {1}'.format(self.scoreboard['player1'],self.players['player1']['name']))
@@ -57,7 +57,7 @@ class Move:
             print(f'   ---- + ---- + ----')
             print(f'     1  |   2  |  3 ')
         
-        tela()
+        display()
 
         #RECEIVING A QUESTION FROM THE PLAYER OF THE TIME
         while True:   
@@ -78,7 +78,7 @@ class Move:
         #CHECK IF PLAYER OF THE TIME WON                                
             if self.places_played[x[0]] == self.players[player_of_the_time]['option'] and self.places_played[x[1]] == self.players[player_of_the_time]['option'] and self.places_played[x[2]]== self.players[player_of_the_time]['option']:
                 self.scoreboard[player_of_the_time] = self.scoreboard[player_of_the_time] + 1
-                tela()
+                display()
                 print('{0} ({1})  Won!!!!'.format(self.players[player_of_the_time]['name'],self.players[player_of_the_time]['option']))
                 return 1
         #CHECKING IF A TIE OCCURRED
@@ -91,7 +91,7 @@ class Move:
                     raise Exception
             except:
                 self.scoreboard['deadlock'] = self.scoreboard['deadlock'] + 1
-                tela()
+                display()
                 print('Players drew')
                 return 2       
 
